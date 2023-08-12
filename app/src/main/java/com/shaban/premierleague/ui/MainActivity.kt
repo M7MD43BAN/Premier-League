@@ -1,7 +1,6 @@
 package com.shaban.premierleague.ui
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
 import com.shaban.premierleague.data.DataManager
 import com.shaban.premierleague.data.domain.Match
 import com.shaban.premierleague.databinding.ActivityMainBinding
@@ -10,26 +9,22 @@ import com.shaban.premierleague.util.CsvParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    private lateinit var binding: ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override val LOG_TAG: String = this::class.java.simpleName
+    override val bindingInflater: (layoutInflater: LayoutInflater) -> ActivityMainBinding
+        get() = ActivityMainBinding::inflate
 
+    override fun setup() {
         parseFile()
-        addCallBacks()
     }
 
-    private fun addCallBacks() {
-        binding.apply {
-            icNext.setOnClickListener {
-                bindMatch(DataManager.getNextMatch())
-            }
-            icPrevious.setOnClickListener {
-                bindMatch(DataManager.getPreviousMatch())
-            }
+    override fun addCallBacks() {
+        binding.icNext.setOnClickListener {
+            bindMatch(DataManager.getNextMatch())
+        }
+        binding.icPrevious.setOnClickListener {
+            bindMatch(DataManager.getPreviousMatch())
         }
     }
 
