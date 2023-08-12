@@ -6,13 +6,448 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/match_details_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/spacing_24"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/match_details"
+        android:textColor="@color/black_87"
+        android:textSize="@dimen/text_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_16"
+        android:background="@drawable/card_background"
+        android:padding="@dimen/spacing_8"
+        app:layout_constraintTop_toBottomOf="@id/match_details_tv">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/referee_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_8"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/referee"
+            android:textColor="@color/black_60"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_team_layout" />
+
+        <LinearLayout
+            android:id="@+id/home_team_layout"
+            android:layout_width="@dimen/spacing_zero"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/team_image"
+                android:layout_height="@dimen/team_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/manchester_united_fc" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_12"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/home_team"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_14" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/home_team_country"
+                android:textColor="@color/black_60"
+                android:textSize="@dimen/text_12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/match_score_layout"
+            android:layout_width="@dimen/spacing_zero"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:layout_marginTop="@dimen/spacing_16"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/away_team_layout"
+            app:layout_constraintStart_toEndOf="@+id/home_team_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.2">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/match_date"
+                android:textColor="@color/black_60"
+                android:textSize="@dimen/text_12" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/match_score"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_24" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/away_team_layout"
+            android:layout_width="@dimen/spacing_zero"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/team_image"
+                android:layout_height="@dimen/team_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/leicester_city_fc" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_12"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/away_team"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_14" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/home_team_country"
+                android:textColor="@color/black_60"
+                android:textSize="@dimen/text_12" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_8"
+        android:background="@drawable/card_background"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/card_item">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/spacing_8"
+            android:background="@null"
+            android:clickable="true"
+            android:src="@drawable/ic_back" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_marginStart="@dimen/spacing_8"
+            android:background="@null"
+            android:clickable="true"
+            android:src="@drawable/ic_next" />
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/match_statistic_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_16"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/match_statistic"
+        android:textColor="@color/black_87"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_16"
+        android:layout_marginVertical="@dimen/spacing_16"
+        android:background="@drawable/card_background"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/match_statistic_tv">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_8">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="start"
+                android:text="@string/home_team_shoot"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/shoot"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="@string/away_team_shoot"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginHorizontal="@dimen/spacing_8"
+            app:dividerColor="@color/black_8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_8">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="start"
+                android:text="@string/home_team_shoot_on_target"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/shoot_on_target"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="@string/away_team_shoot_on_target"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginHorizontal="@dimen/spacing_8"
+            app:dividerColor="@color/black_8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_8">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="start"
+                android:text="@string/home_team_foul"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/foul"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="@string/away_team_foul"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginHorizontal="@dimen/spacing_8"
+            app:dividerColor="@color/black_8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_8">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="start"
+                android:text="@string/home_team_yellow_card"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/yellow_card"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="@string/away_team_yellow_card"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginHorizontal="@dimen/spacing_8"
+            app:dividerColor="@color/black_8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_8">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="start"
+                android:text="@string/home_team_red_card"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/red_card"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="@string/away_team_red_card"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginHorizontal="@dimen/spacing_8"
+            app:dividerColor="@color/black_8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_8">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="start"
+                android:text="@string/home_team_corner_kick"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/corner_kick"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="@string/away_team_corner_kick"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
