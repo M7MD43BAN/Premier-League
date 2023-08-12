@@ -99,7 +99,7 @@
                 android:textColor="@color/black_60"
                 android:textSize="@dimen/text_12" />
 
-            <com.google.android.material.textview.MaterialTextView
+            <TextView
                 android:id="@+id/match_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
