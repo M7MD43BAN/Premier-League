@@ -26,4 +26,7 @@
     <string name="corner_kick">Corner Kick</string>
     <string name="home_team_corner_kick">9</string>
     <string name="away_team_corner_kick">14</string>
+    <string name="half_time_goals">Half Time Goals</string>
+    <string name="home_team_half_time_goals">1</string>
+    <string name="away_team_half_time_goals">0</string>
 </resources>
