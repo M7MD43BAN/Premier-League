@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Premier League</string>
+    <string name="match_details">Match Details</string>
+    <string name="home_team">Manchester United</string>
+    <string name="home_team_country">England</string>
+    <string name="away_team">Leicester City</string>
+    <string name="referee">K Friend</string>
+    <string name="match_date">27 Aug 22</string>
+    <string name="match_score">2 – 1</string>
+    <string name="match_statistic">Match Statistic</string>
+    <string name="shoot">Shoot</string>
+    <string name="home_team_shoot">17</string>
+    <string name="away_team_shoot">18</string>
+    <string name="shoot_on_target">Shoot on Target</string>
+    <string name="home_team_shoot_on_target">7</string>
+    <string name="away_team_shoot_on_target">10</string>
+    <string name="foul">Foul</string>
+    <string name="home_team_foul">5</string>
+    <string name="away_team_foul">6</string>
+    <string name="yellow_card">Yellow Card</string>
+    <string name="home_team_yellow_card">4</string>
+    <string name="away_team_yellow_card">18</string>
+    <string name="red_card">Red Card</string>
+    <string name="home_team_red_card">0</string>
+    <string name="away_team_red_card">0</string>
+    <string name="corner_kick">Corner Kick</string>
+    <string name="home_team_corner_kick">9</string>
+    <string name="away_team_corner_kick">14</string>
 </resources>
