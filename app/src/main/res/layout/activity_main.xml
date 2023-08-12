@@ -53,9 +53,9 @@
             app:layout_constraintWidth_percent="0.4">
 
             <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/home_team_logo"
                 android:layout_width="@dimen/team_image"
                 android:layout_height="@dimen/team_image"
-                android:scaleType="centerCrop"
                 android:src="@drawable/manchester_united_fc" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -121,10 +121,10 @@
             app:layout_constraintWidth_percent="0.4">
 
             <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/away_team_logo"
                 android:layout_width="@dimen/team_image"
                 android:layout_height="@dimen/team_image"
-                android:scaleType="centerCrop"
-                android:src="@drawable/leicester_city_fc" />
+                android:src="@drawable/leicester" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/away_team_name"

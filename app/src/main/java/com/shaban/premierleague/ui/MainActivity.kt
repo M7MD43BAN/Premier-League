@@ -68,5 +68,10 @@ class MainActivity : AppCompatActivity() {
             homeTeamCornerKick.text = match.homeCorners
             awayTeamCornerKick.text = match.awayCorners
         }
+        getTeamLogo(match)
+    }
+
+    private fun getTeamLogo(match: Match) {
+
     }
 }
