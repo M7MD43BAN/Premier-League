@@ -220,7 +220,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="@string/shoot"
-                android:textColor="@color/black_87"
+                android:textColor="@color/black_60"
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -263,7 +263,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="@string/shoot_on_target"
-                android:textColor="@color/black_87"
+                android:textColor="@color/black_60"
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -306,7 +306,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="@string/foul"
-                android:textColor="@color/black_87"
+                android:textColor="@color/black_60"
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -349,7 +349,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="@string/yellow_card"
-                android:textColor="@color/black_87"
+                android:textColor="@color/black_60"
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -392,7 +392,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="@string/red_card"
-                android:textColor="@color/black_87"
+                android:textColor="@color/black_60"
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -435,7 +435,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
                 android:text="@string/corner_kick"
-                android:textColor="@color/black_87"
+                android:textColor="@color/black_60"
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
