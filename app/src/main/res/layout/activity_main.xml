@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/match_details_tv">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/referee_name_tv"
+            android:id="@+id/referee_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_8"
@@ -59,6 +59,7 @@
                 android:src="@drawable/manchester_united_fc" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_12"
@@ -90,6 +91,7 @@
             app:layout_constraintWidth_percent="0.2">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/match_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
@@ -98,6 +100,7 @@
                 android:textSize="@dimen/text_12" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/match_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_regular"
@@ -124,6 +127,7 @@
                 android:src="@drawable/leicester_city_fc" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_12"
@@ -153,6 +157,7 @@
         app:layout_constraintTop_toBottomOf="@+id/card_item">
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ic_previous"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_gravity="start"
@@ -167,6 +172,7 @@
             android:layout_weight="1" />
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ic_next"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
             android:layout_marginStart="@dimen/spacing_8"
@@ -204,6 +210,7 @@
             android:padding="@dimen/spacing_8">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_half_time_goals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -224,6 +231,7 @@
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_half_time_goals"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -247,6 +255,7 @@
             android:padding="@dimen/spacing_8">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_shoot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -267,6 +276,7 @@
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_shoot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -290,6 +300,7 @@
             android:padding="@dimen/spacing_8">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_shoot_on_target"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -310,6 +321,7 @@
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_shoot_on_target"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -333,6 +345,7 @@
             android:padding="@dimen/spacing_8">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_foul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -353,6 +366,7 @@
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_foul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -376,6 +390,7 @@
             android:padding="@dimen/spacing_8">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_yellow_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -396,6 +411,7 @@
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_yellow_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -419,6 +435,7 @@
             android:padding="@dimen/spacing_8">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_red_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -439,6 +456,7 @@
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_red_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -462,6 +480,7 @@
             android:padding="@dimen/spacing_8">
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/home_team_corner_kick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -482,6 +501,7 @@
                 android:textSize="@dimen/text_16" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/away_team_corner_kick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
