@@ -1,6 +1,7 @@
 package com.shaban.premierleague.ui
 
 import android.view.LayoutInflater
+import com.shaban.premierleague.R
 import com.shaban.premierleague.data.DataManager
 import com.shaban.premierleague.data.domain.Match
 import com.shaban.premierleague.databinding.ActivityMainBinding
@@ -67,6 +68,39 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun getTeamLogo(match: Match) {
+        val homeLogoResourceId = getTeamLogoResource(match.homeTeam)
+        val awayLogoResourceId = getTeamLogoResource(match.awayTeam)
 
+        if (homeLogoResourceId != 0 && awayLogoResourceId != 0) {
+            binding.homeTeamLogo.setImageResource(homeLogoResourceId)
+            binding.awayTeamLogo.setImageResource(awayLogoResourceId)
+        }
+    }
+
+    private fun getTeamLogoResource(teamName: String?): Int {
+        val teamLogoMap = mapOf(
+            "Arsenal" to R.drawable.arsenal,
+            "Bournemouth" to R.drawable.bournemouth_fc,
+            "Brighton" to R.drawable.brighton,
+            "Burnley" to R.drawable.burnley,
+            "Cardiff" to R.drawable.cardiff,
+            "Chelsea" to R.drawable.chelsea,
+            "Crystal Palace" to R.drawable.crystalpalace,
+            "Everton" to R.drawable.everton,
+            "Fulham" to R.drawable.fulham,
+            "Huddersfield" to R.drawable.huddersfield,
+            "Leicester" to R.drawable.leicester,
+            "Liverpool" to R.drawable.liverpool,
+            "Man City" to R.drawable.mancity,
+            "Man United" to R.drawable.manchester_united_fc,
+            "Newcastle" to R.drawable.newcastle,
+            "Southampton" to R.drawable.southampton,
+            "Tottenham" to R.drawable.tottenham,
+            "Watford" to R.drawable.watford,
+            "West Ham" to R.drawable.westham_united,
+            "Wolves" to R.drawable.wolves
+        )
+
+        return teamLogoMap[teamName] ?: 0
     }
 }
