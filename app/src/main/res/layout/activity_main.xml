@@ -159,7 +159,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/next_previous_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_16"
@@ -204,10 +204,10 @@
         android:textSize="@dimen/text_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/next_previous_card" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/match_statistic_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing_16"
@@ -526,4 +526,14 @@
         </LinearLayout>
     </LinearLayout>
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/search_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/search_not_found"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

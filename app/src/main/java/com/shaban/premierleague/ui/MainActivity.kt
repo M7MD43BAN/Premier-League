@@ -1,6 +1,8 @@
 package com.shaban.premierleague.ui
 
 import android.view.LayoutInflater
+import android.view.View
+import android.widget.SearchView
 import com.shaban.premierleague.R
 import com.shaban.premierleague.data.DataManager
 import com.shaban.premierleague.data.domain.Match
@@ -16,16 +18,58 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (layoutInflater: LayoutInflater) -> ActivityMainBinding
         get() = ActivityMainBinding::inflate
 
+    private var currentMatches: List<Match> = emptyList()
+
     override fun setup() {
         parseFile()
+        currentMatches = DataManager.getAllMatches()
     }
 
     override fun addCallBacks() {
         binding.icNext.setOnClickListener {
-            bindMatch(DataManager.getNextMatch())
+            bindMatch(DataManager.getNextMatch(currentMatches))
         }
+
         binding.icPrevious.setOnClickListener {
-            bindMatch(DataManager.getPreviousMatch())
+            bindMatch(DataManager.getPreviousMatch(currentMatches))
+        }
+
+        binding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                val searchQuery = newText.orEmpty()
+                currentMatches = if (searchQuery.isNotEmpty()) {
+                    DataManager.getMatchesByHomeTeam(searchQuery)
+                } else {
+                    DataManager.getAllMatches()
+                }
+                updateMatchList(currentMatches)
+                return true
+            }
+        })
+    }
+
+    private fun updateMatchList(matches: List<Match>) {
+        if (matches.isNotEmpty()) {
+            bindMatch(matches[1])
+            contentVisibility(View.VISIBLE)
+            binding.searchPlaceholder.visibility = View.GONE
+        } else {
+            contentVisibility(View.GONE)
+            binding.searchPlaceholder.visibility = View.VISIBLE
+        }
+    }
+
+    private fun contentVisibility(visibility: Int) {
+        binding.apply {
+            matchDetailsTv.visibility = visibility
+            cardItem.visibility = visibility
+            nextPreviousCard.visibility = visibility
+            matchStatisticTv.visibility = visibility
+            matchStatisticLayout.visibility = visibility
         }
     }
 

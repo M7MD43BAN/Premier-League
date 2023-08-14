@@ -10,19 +10,25 @@ object DataManager {
 
     fun getCurrentMatch(): Match = matches[matchIndex]
 
-    fun getNextMatch(): Match {
+    fun getAllMatches(): List<Match> = matches
+
+    fun getNextMatch(matches: List<Match>): Match {
         matchIndex++
-        if (matchIndex == matches.size) {
+        if (matchIndex >= matches.size) {
             matchIndex = 1
         }
         return matches[matchIndex]
     }
 
-    fun getPreviousMatch(): Match {
+    fun getPreviousMatch(matches: List<Match>): Match {
         matchIndex--
-        if (matchIndex == 0) {
+        if (matchIndex <= 0) {
             matchIndex = matches.size - 1
         }
         return matches[matchIndex]
+    }
+
+    fun getMatchesByHomeTeam(searchQuery: String): List<Match> {
+        return matches.filter { it.homeTeam?.contains(searchQuery, true) == true }
     }
 }
