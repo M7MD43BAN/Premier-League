@@ -6,18 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_height"
+        android:layout_margin="@dimen/spacing_16"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@drawable/card_background"
+        android:queryHint="Search about home team"
+        android:theme="@style/ThemeOverlay.Material3.Search"
+        app:layout_constraintBottom_toTopOf="@id/match_details_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/match_details_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_24"
+        android:layout_marginTop="@dimen/spacing_16"
         android:fontFamily="@font/poppins_semi_bold"
         android:text="@string/match_details"
         android:textColor="@color/black_87"
         android:textSize="@dimen/text_16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/search_bar" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/card_item"
@@ -513,4 +525,5 @@
 
         </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
